@@ -1,4 +1,1 @@
-console.log("woliver");
-console.log('Woliver');
-console.log(`Woliver`);
-console.log(123456)
+console.log('Meu nome é "Woliver". Estou apredendo JavaScript às', 4, 'da tarde');
