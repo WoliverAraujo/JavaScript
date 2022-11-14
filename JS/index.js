@@ -1,8 +1,13 @@
-const primeiroNumero = 5;
-const segundoNumero = '10';
-const resultado = primeiroNumero * segundoNumero;
-const resultadoDuplicado = resultado * 2;
-let resultadoTriplicado = resultado * 3;
-resultadoTriplicado = resultadoTriplicado + 5;
-console.log (typeof segundoNumero)
-console.log (resultadoTriplicado);
+const nome= 'Woliver';
+const sobrenome ='Araújo'
+const idade = 33
+const peso = 87.5
+const altura = 1.75
+let imc;
+let anoDeNascimento;
+imc = peso / (altura*altura)
+anoDeNascimento = 2022 - idade;
+
+console.log (`${nome} ${sobrenome} tem ${idade} anos pesa ${peso}, kg`);
+console.log (`Tem ${altura} e seu IMC é de ${imc}`);
+console.log (nome,'nasceu em',anoDeNascimento);
