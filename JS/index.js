@@ -1,11 +1,8 @@
-let num1 = 1;
-let num2 = 2.5;
-let num3 = 1.58556454684;
+/*let num1 = 9.54578;
+let num2 = Math.floor(num1); //Arredonda para baixo
+let num3 = Math.ceil(num1); // Areedonda para cima
+let num4 = Math.round(num1); // Arredonda para o numero inteiro mais proximo
+console.log(num2, num3, num4);*/
 
-
-console.log(num1.toString() + num2)
-console.log(num3.toFixed(2))//arredonda somente na visualização
-num3 = Number(num3.toFixed(2))//arredonda dentro do programa
-console.log(Number.isInteger(num1))// para saber so o numero é inteiro
-console.log(Number.isInteger(num3))
-console.log(Number.isInteger(num2))
+let aleatorio = Math.round(Math.random()*(10-5)+5); // Math.rando gera numero aleatório. Math round define a margem em que este numero vai ser gerado
+console.log(aleatorio)
