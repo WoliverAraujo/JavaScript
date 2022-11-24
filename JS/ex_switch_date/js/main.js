@@ -1,55 +1,105 @@
-const form = document.querySelector('#formulario');
+/*const h1 = document.querySelector('.container h1');
+const data = new Date();
 
-form.addEventListener('submit', function (e) {
-    e.preventDefault();
-    const inputPeso = e.target.querySelector('#peso');
-    const inputAltura = e.target.querySelector('#altura');
-    const peso = Number(inputPeso.value);
-    const altura = Number(inputAltura.value);
-
-    if (!peso) {
-        setResultado('Peso inválido', false);
-        return;
+function getDiaSemanaTexto(diaSemana) {
+    let diaSemanaTexto;
+    switch (diaSemana) {
+        case 0:
+            diaSemanaTexto = 'domingo';
+            return diaSemanaTexto;
+        case 1:
+            diaSemanaTexto = 'segunda-feira';
+            return diaSemanaTexto;
+        case 2:
+            diaSemanaTexto = 'terça-feira';
+            return diaSemanaTexto;
+        case 3:
+            diaSemanaTexto = 'quarta-feira';
+            return diaSemanaTexto;
+        case 4:
+            diaSemanaTexto = 'quinta-feira';
+            return diaSemanaTexto;
+        case 5:
+            diaSemanaTexto = 'sexta-feira';
+            return diaSemanaTexto;
+        case 6:
+            diaSemanaTexto = 'Sábado';
+            return diaSemanaTexto;
+        default:
+            diaSemanaTexto = '';
+            return diaSemanaTexto;
     }
-    if (!altura) {
-        setResultado('Altura inválida', false);
-        return;
+}
+
+function getNomeMes(numeroMes) {
+    let nomeMes;
+    switch (numeroMes) {
+        case 0:
+            nomeMes = 'janeiro';
+            return nomeMes;
+        case 1:
+            nomeMes = 'fevereiro';
+            return nomeMes;
+        case 2:
+            nomeMes = 'março';
+            return nomeMes;
+        case 3:
+            nomeMes = 'abril';
+            return nomeMes;
+        case 4:
+            nomeMes = 'maio';
+            return nomeMes;
+        case 5:
+            nomeMes = 'junho';
+            return nomeMes;
+        case 6:
+            nomeMes = 'julho';
+            return nomeMes;
+        case 7:
+            nomeMes = 'agosto';
+            return nomeMes;
+        case 8:
+            nomeMes = 'setembro';
+            return nomeMes;
+        case 9:
+            nomeMes = 'outubro';
+            return nomeMes;
+        case 10:
+            nomeMes = 'novembro';
+            return nomeMes;
+        case 11:
+            nomeMes = 'dezembro';
+            return nomeMes;
     }
-    const imc = getImc(peso, altura);
-    const nivelImc = getNivelImc (imc);
-    const msg = `Seu IMC é ${imc} (${nivelImc})`;
-    setResultado(msg, true);
-});
-
-function getNivelImc(imc) {
-    const nivel = ['Abaixo do peso', 'Peso Normal', 'Sobrepeso', 'Obesidade grau 1', 'Obesidade grau 2', 'Obesidade grau 3'];
-    if (imc >= 39.9) return nivel[5];
-    if (imc >= 34.9) return nivel[4];
-    if (imc >= 29.9) return nivel[3];
-    if (imc >= 24.9) return nivel[2];
-    if (imc >= 18.5) return nivel[1];
-    if (imc < 18.5) return nivel[0];
-}
-function getImc(peso, altura) {
-    const imc = peso / altura ** 2;
-    return imc.toFixed(2);
-}
-function criaP() {
-    const p = document.createElement('p');
-    return p;
 }
 
-function setResultado(msg, isValid) {
-    const resultado = document.querySelector('#resultado');
-    resultado.innerHTML = '';
-
-    const p = criaP();
-    if (isValid) {
-        p.classList.add('paragrafo-resultado');
-    } else {
-        p.classList.add('bad');
-    }
-
-    p.innerHTML = msg;
-    resultado.appendChild(p);
+function zeroAEsquerda (num) {
+    return num >= 10 ? num : `0${num}`
 }
+
+function criaData (data) {
+    const diaSemana = data.getDay();
+    const numeroMes = data.getMonth();
+
+    const nomeDia = getDiaSemanaTexto(diaSemana);
+    const nomeMes = getNomeMes(numeroMes);
+
+    return (
+        `${nomeDia}, ${data.getDate()} de ${nomeMes}`+
+        ` de ${data.getFullYear()} ${zeroAEsquerda(data.getHours())}:${zeroAEsquerda(data.getMinutes())}`
+        )
+}
+
+h1.innerHTML = criaData(data);*/
+
+/*const h1 = document.querySelector('.container h1');
+const data = new Date();
+const opcoes = {
+    dateStyle: 'full'
+};
+
+h1.innerHTML = data.toLocaleDateString('pt-BR', opcoes);*/
+
+const h1 = document.querySelector('.container h1');
+const data = new Date();
+h1.innerHTML = data.toLocaleDateString('pt-BR', {dateStyle: 'full', timeStyle: 'full' });
